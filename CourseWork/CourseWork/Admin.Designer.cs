@@ -126,14 +126,16 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newToolStripMenuItem.Text = "New";
+            this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // manageToolStripMenuItem
             // 
@@ -202,14 +204,14 @@
             // expencesToolStripMenuItem
             // 
             this.expencesToolStripMenuItem.Name = "expencesToolStripMenuItem";
-            this.expencesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.expencesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.expencesToolStripMenuItem.Text = "Expenses";
             this.expencesToolStripMenuItem.Click += new System.EventHandler(this.expencesToolStripMenuItem_Click);
             // 
             // effectivenessToolStripMenuItem
             // 
             this.effectivenessToolStripMenuItem.Name = "effectivenessToolStripMenuItem";
-            this.effectivenessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.effectivenessToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.effectivenessToolStripMenuItem.Text = "Effectiveness";
             this.effectivenessToolStripMenuItem.Click += new System.EventHandler(this.effectivenessToolStripMenuItem_Click);
             // 

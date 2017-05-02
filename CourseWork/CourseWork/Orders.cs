@@ -265,8 +265,8 @@ where Products.ID=Orders.ProductID and Orders.Status='InOrder';");
             ConnectionClass.executeQuery(@"update Products set Status='Sold' where ID=" + ID + ";");
 
             ConnectionClass.executeQuery(@"update Orders set Status='Sold', Data='" +  DateTime.Today.ToShortDateString() +"' where ProductID=" + ID + ";");
-            ConnectionClass.executeQuery("insert into Sales(ClientID ,ProductID ,Price ,Data) values ("+ dataGridView1.SelectedRows[0].Cells[1].Value +
-                "," + dataGridView1.SelectedRows[0].Cells[2].Value +"," + dataGridView1.SelectedRows[0].Cells[5].Value +",'" + DateTime.Today.ToShortDateString() + "');");
+            //ConnectionClass.executeQuery("insert into Sales(ClientID ,ProductID ,Price ,Data) values ("+ dataGridView1.SelectedRows[0].Cells[1].Value +
+            //    "," + dataGridView1.SelectedRows[0].Cells[2].Value +"," + dataGridView1.SelectedRows[0].Cells[5].Value +",'" + DateTime.Today.ToShortDateString() + "');");
 
             //if (dataGridView1.SelectedRows[0].Cells[3].Value.ToString() == "Chair")
             //{

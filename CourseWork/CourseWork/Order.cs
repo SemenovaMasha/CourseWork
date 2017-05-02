@@ -39,23 +39,23 @@ namespace CourseWork
             legNumber.Items.Add("3");
             legNumber.Items.Add("4");
                         
-            sql = new SQLiteConnection(@"Data Source=D:\mydb.sqlite;Version=3");
+            //sql = new SQLiteConnection(@"Data Source=D:\mydb.sqlite;Version=3");
 
-            sql.Open();
-            SQLiteCommand sc = new SQLiteCommand
-                  (@"SELECT Login FROM Client;", sql);
+            //sql.Open();
+            //SQLiteCommand sc = new SQLiteCommand
+            //      (@"SELECT Login FROM Client;", sql);
 
-            SQLiteDataReader sdr = sc.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(sdr);
+            //SQLiteDataReader sdr = sc.ExecuteReader();
+            DataTable dt = ConnectionClass.getResult(@"SELECT Login FROM Client;");
+            //dt.Load(sdr);
             
             for(int i = 0; i < dt.Rows.Count; i++)
             {
                 clientId.Items.Add(dt.Rows[i][0]);
             }
-            sdr.Close();
+            //sdr.Close();
 
-            sql.Close();
+            //sql.Close();
 
         }        
 

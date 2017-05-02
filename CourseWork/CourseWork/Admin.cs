@@ -102,5 +102,29 @@ namespace CourseWork
         {
             Reports.effectExcel(pictureBox1);
         }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.Filter = "Cursor Files|*.sqlite";
+            od.Title = "Select a DataBase File";
+
+            if (od.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+               ConnectionClass.setConnectionString(od.FileName);
+            }
+        }
+
+        private void newToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sd = new SaveFileDialog();
+            sd.Filter = "Cursor Files|*.sqlite";
+            sd.Title = "Create a DataBase File";
+            
+            if (sd.ShowDialog() == System.Windows.Forms.DialogResult.OK&&sd.FileName != "")
+            {
+                ConnectionClass.createEmptyDataBase(sd.FileName.EndsWith(".sqlite")? sd.FileName: sd.FileName+".sqlite");
+            }
+        }
     }
 }

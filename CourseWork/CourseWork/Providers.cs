@@ -38,34 +38,34 @@ namespace CourseWork
             {
 
                 //sql.Open();
-                SQLiteCommand sc = new SQLiteCommand
-                    (@"INSERT INTO Providers(Name,Address,Phone,Mail)  VALUES('" + addProvider.textBox1.Text + @"','" + addProvider.textBox2.Text + @"','" + addProvider.textBox3.Text + @"','" + addProvider.textBox4.Text + @"');", sql);
+                //SQLiteCommand sc = new SQLiteCommand
+                   ConnectionClass.executeQuery (@"INSERT INTO Providers(Name,Address,Phone,Mail)  VALUES('" + addProvider.textBox1.Text + @"','" + addProvider.textBox2.Text + @"','" + addProvider.textBox3.Text + @"','" + addProvider.textBox4.Text + @"');");
 
-                sc.ExecuteNonQuery();
+                //sc.ExecuteNonQuery();
 
 
-                sc = new SQLiteCommand
-       (@"SELECT max(ID) FROM Providers;", sql);
+       //         sc = new SQLiteCommand
+       //(@"SELECT max(ID) FROM Providers;", sql);
 
-                SQLiteDataReader sdr = sc.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(sdr);
+       //         SQLiteDataReader sdr = sc.ExecuteReader();
+                DataTable dt = ConnectionClass.getResult(@"SELECT max(ID) FROM Providers;");
+               // dt.Load(sdr);
 
                 int maxID = Convert.ToInt32(dt.Rows[0][0]);
-                sdr.Close();
+               // sdr.Close();
                                 
                 textBox1.Text = addProvider.dataGridView1.Rows.Count + "";
                 for (int i=0;i< addProvider.dataGridView1.Rows.Count-1; i++)
                 {
-                    sc = new SQLiteCommand
+                    ConnectionClass.executeQuery
                    (@"INSERT INTO ProvidersList(ProviderID,Material,Price,Volume,Time) 
                     VALUES(" + maxID + ",'" + addProvider.dataGridView1.Rows[i].Cells[0].Value + "',"
                     + addProvider.dataGridView1.Rows[i].Cells[1].Value + ","
                     + addProvider.dataGridView1.Rows[i].Cells[2].Value + ","
                     + addProvider.dataGridView1.Rows[i].Cells[3].Value 
-                    + @");", sql);
+                    + @");");
 
-                    sc.ExecuteNonQuery();
+                    //sc.ExecuteNonQuery();
                     // textBox1.Text = dt.Rows[i][0] + " " + dt.Rows[i][1] + " " + dt.Rows[i][2] + " " + dt.Rows[i][3];
                 }
 

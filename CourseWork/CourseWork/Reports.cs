@@ -13,7 +13,6 @@ namespace CourseWork
     {
     static public void invoicesPdf()
     {
-
             DataTable dt = ConnectionClass.getResult("select Material,Volume,Price,Name,Data,(Price*Volume) as Cost" +
                 " from Purchase,Providers where Purchase.ProviderID = Providers.ID");
 
@@ -23,7 +22,7 @@ namespace CourseWork
 
         BaseFont baseFont = BaseFont.CreateFont(@"D:\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
-            iTextSharp.text.Phrase phrase = new Phrase("От "+ DateTime.Today.ToShortDateString(), new
+            Phrase phrase = new Phrase("От "+ DateTime.Today.ToShortDateString(), new
 iTextSharp.text.Font(baseFont, 15,
 iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             Paragraph a1 = new Paragraph(phrase);
@@ -223,9 +222,8 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
         }
         static public void expensesExcel(PictureBox p)
         {
-
-            DataTable dt = ConnectionClass.getResult("select Type,sum(Sales.Price), substr(Data,4,10) as d from Sales,Products" +
-                " where substr(Data,7,4)=='2017' and Products.ID=Sales.ProductID group by Type,d order by Type;");
+            DataTable dt = ConnectionClass.getResult("select Type,sum(Orders.Price), substr(Data,4,10) as d from Orders,Products" +
+                " where substr(Data,7,4)=='2017' and Products.ID=Orders.ProductID and Orders.Status = 'Sold' group by Type,d order by Type;");
             
 
             Excel.Application excelapp;
@@ -353,7 +351,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
         static public void effectExcel(PictureBox p)
         {
             DataTable dt1 = ConnectionClass.getResult("select sum(Price * Volume), substr(Data,4,10) as d from Purchase where substr(Data,7,4)=='2017' group by d ;");
-            DataTable dt2 = ConnectionClass.getResult("select sum(Sales.Price), substr(Data,4,10) as d from Sales where substr(Data,7,4)=='2017'  group by d ;");
+            DataTable dt2 = ConnectionClass.getResult("select sum(Orders.Price), substr(Data,4,10) as d from Orders where substr(Data,7,4)=='2017' and Orders.Status = 'Sold' group by d ;");
 
 
             Excel.Application excelapp;
@@ -399,7 +397,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             }
             for (int i = 0; i < dt2.Rows.Count; i++)
             {
-                excelcells = (Excel.Range)excelworksheet.Cells[5, 2 + Convert.ToInt32(dt1.Rows[i][1].ToString().Substring(0, 2))];
+                excelcells = (Excel.Range)excelworksheet.Cells[5, 2 + Convert.ToInt32(dt2.Rows[i][1].ToString().Substring(0, 2))];
                 excelcells.Value2 = dt2.Rows[i][0].ToString();
             }
             for (int i = 0; i <12; i++)

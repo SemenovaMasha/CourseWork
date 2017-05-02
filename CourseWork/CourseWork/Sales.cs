@@ -17,13 +17,13 @@ namespace CourseWork
         {
             InitializeComponent();
 
-            //dataGridView1.DataSource = ConnectionClass.getResult("SELECT Orders.ID, ClientID, " +
-            //    "ProductID, Products.Type, Products.Material, Products.Price, Orders.Status , Orders.Data" +
-            //    " FROM Orders, Products where Products.ID = Orders.ProductID and Orders.Status = 'Sold'; ");
+            dataGridView1.DataSource = ConnectionClass.getResult("SELECT Orders.ID, Client.Login, " +
+                "ProductID, Products.Type, Products.Material, Products.Price, Orders.Status , Orders.Data" +
+                " FROM Orders, Products,Client where Products.ID = Orders.ProductID and Orders.Status = 'Sold' and Orders.ClientID=Client.ID; ");
 
-            dataGridView1.DataSource = ConnectionClass.getResult("SELECT Sales.ID, Client.Login, " +
-                "ProductID, Products.Type, Products.Material, Sales.Price,  Sales.Data" +
-                " FROM  Sales,Products,Client where Products.ID = Sales.ProductID and Sales.ClientID=Client.ID; ");
+            //dataGridView1.DataSource = ConnectionClass.getResult("SELECT Sales.ID, Client.Login, " +
+            //    "ProductID, Products.Type, Products.Material, Sales.Price,  Sales.Data" +
+            //    " FROM  Sales,Products,Client where Products.ID = Sales.ProductID and Sales.ClientID=Client.ID; ");
         }
     }
 }
