@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CourseWork
 {
-    public class Product
+    public abstract class Product
     {
-
+       public abstract int getPrice();
     }
     public class Chair: Product
     {
@@ -23,26 +24,46 @@ namespace CourseWork
         public string material;
         public string backForm;
         public string backHeight;
+
+        override public int getPrice()
+        {
+            int p = type == "Computer" ? 1000 : 500;
+            DataTable dt = ConnectionClass.getResult(@"SELECT min(Price) FROM ProvidersList where Material='"+material+"';");
+            p += Convert.ToInt32(backHeight) * Convert.ToInt32(dt.Rows[0][0].ToString())/10 ;
+
+            return p;
+        }
     }
     public class Cupboard: Product
     {
-        public Cupboard(string type, string material, string height, string width, string doorMaterial, string shelf1, string shelf2)
+        public Cupboard(string type, string material, string height, string width, string doorMaterial, string shelfNum)
         {
             this.type = type;
             this.material = material;
             this.height = height;
             this.width = width;
             this.doorMaterial = doorMaterial;
-            this.shelf1 = shelf1;
-            this.shelf2 = shelf2;
+            this.shelfNum = shelfNum;
         }
         public string type;
         public string material;
         public string height;
         public string width;
         public string doorMaterial;
-        public string shelf1;
-        public string shelf2;
+        public string shelfNum;
+
+        public override int getPrice()
+        {
+            int p = type == "Closet" ? 2000 : 1500;
+            DataTable dt = ConnectionClass.getResult(@"SELECT min(Price) FROM ProvidersList where Material='" + material + "';");
+            p += Convert.ToInt32(height) * Convert.ToInt32(width) * Convert.ToInt32(dt.Rows[0][0].ToString()) / 10;
+            dt = ConnectionClass.getResult(@"SELECT min(Price) FROM ProvidersList where Material='" + doorMaterial + "';");
+            p += Convert.ToInt32(height) * Convert.ToInt32(width) * Convert.ToInt32(dt.Rows[0][0].ToString()) / 100;
+
+            p += Convert.ToInt32(shelfNum)* 1000;
+
+            return p;
+        }
     }
     public class Table: Product
     {
@@ -61,5 +82,15 @@ namespace CourseWork
         public string form;
         public string height;
         public string width;
+
+        public override int getPrice()
+        {
+            int p = type == "Computer" ? 1000 : 500;
+            DataTable dt = ConnectionClass.getResult(@"SELECT min(Price) FROM ProvidersList where Material='" + material + "';");
+            p += Convert.ToInt32(height) * Convert.ToInt32(width) * Convert.ToInt32(dt.Rows[0][0].ToString()) / 10;
+            p += Convert.ToInt32(legNumber) * 500;
+
+            return p;
+        }
     }
 }

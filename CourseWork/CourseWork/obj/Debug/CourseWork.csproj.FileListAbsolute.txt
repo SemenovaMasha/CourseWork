@@ -37,3 +37,41 @@ D:\УлГТУ\2 курс\Програмирование2\Курсач\CourseWork
 D:\УлГТУ\2 курс\Програмирование2\Курсач\CourseWork\CourseWork\bin\Debug\System.Data.SQLite.dll.config
 D:\УлГТУ\2 курс\Програмирование2\Курсач\CourseWork\CourseWork\obj\Debug\CourseWork.exe
 D:\УлГТУ\2 курс\Програмирование2\Курсач\CourseWork\CourseWork\obj\Debug\CourseWork.pdb
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\CourseWork.exe.config
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\CourseWork.exe
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\CourseWork.pdb
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\AdamsLair.WinForms.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\EntityFramework.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\EntityFramework.SqlServer.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\MetroFramework.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\MetroFramework.Fonts.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\PopupControl.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\System.Data.SQLite.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\System.Data.SQLite.EF6.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\System.Data.SQLite.Linq.dll
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\AdamsLair.WinForms.xml
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\EntityFramework.xml
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\EntityFramework.SqlServer.xml
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\System.Data.SQLite.xml
+D:\CourseWork\CourseWork\CourseWork\bin\Debug\System.Data.SQLite.dll.config
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.csprojResolveAssemblyReference.cache
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.AddMaterial.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.AddProvider.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.BuyMaterials.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Clients.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Admin.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.AddProduct.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Order.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.OrderCon.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Orders.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Properties.Resources.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Providers.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Purchases.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Sales.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.SignIn.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.SignUp.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Store.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.User.resources
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.csproj.GenerateResource.Cache
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.exe
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.pdb

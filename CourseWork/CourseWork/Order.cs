@@ -98,7 +98,8 @@ namespace CourseWork
 
             if (comboBox1.SelectedIndex == 0)
             {
-                // product = new Chair(ChairType.Text, chairMaterial.Text, chairForm.Text, chairHeight.Text);
+                 product = new Chair(ChairType.Text, chairMaterial.Text, chairForm.Text, chairHeight.Text);
+
                 ConnectionClass.executeQuery("insert into Products(Type ,Material,VolMaterial ,DopMaterial ,VolDopMaterial ,Price ,Status ,Image ) values ('"
                     + comboBox1.Text + "','" + chairMaterial.Text + "','" + "100" + "',null,null,'" + "200" + "','" + "InStore" + "','" + "image" + "');");
 

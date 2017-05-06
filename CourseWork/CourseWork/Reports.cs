@@ -108,6 +108,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             Excel.Range excelcells;
 
             excelapp = new Excel.Application();
+            //excelapp.DefaultSaveFormat = Excel.XlFileFormat.xlExcel12;
             excelapp.Visible = true;
             excelapp.SheetsInNewWorkbook = 3;
             excelapp.Workbooks.Add(Type.Missing);
@@ -179,8 +180,8 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelappworkbooks = excelapp.Workbooks;
             excelappworkbook = excelappworkbooks[1];
 
-            excelappworkbook.SaveAs(@"D:/invoices.xlsx",  //object Filename
-      Excel.XlFileFormat.xlHtml,          //object FileFormat
+            excelappworkbook.SaveAs(@"D:/invoices1.xls",  //object Filename
+      Excel.XlFileFormat.xlExcel12,          //object FileFormat
       Type.Missing,                       //object Password 
       Type.Missing,                       //object WriteResPassword  
       Type.Missing,                       //object ReadOnlyRecommended
@@ -196,7 +197,11 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             string fullPath = Path.GetTempPath() + "invoices.png";
             excelchart.Export(fullPath, "PNG",false);
             p.Image = new Bitmap( System.Drawing.Image.FromFile(fullPath), new Size(p.Width,p.Height));
-            //excelappworkbook.Save();
+
+           
+
+            // excelappworkbook.Save();
+            //excelapp.Quit();
             //return dt;
 
             //Bitmap bmp = new Bitmap(p.Width, p.Height);
@@ -234,6 +239,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             Excel.Range excelcells;
 
             excelapp = new Excel.Application();
+            excelapp.DefaultSaveFormat = Excel.XlFileFormat.xlOpenXMLWorkbook;
             excelapp.Visible = true;
             excelapp.SheetsInNewWorkbook = 3;
             excelapp.Workbooks.Add(Type.Missing);
@@ -306,18 +312,20 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelappworkbooks = excelapp.Workbooks;
             excelappworkbook = excelappworkbooks[1];
 
-            excelappworkbook.SaveAs(@"D:/expenses.xlsx",  //object Filename
-      Excel.XlFileFormat.xlHtml,          //object FileFormat
-      Type.Missing,                       //object Password 
-      Type.Missing,                       //object WriteResPassword  
-      Type.Missing,                       //object ReadOnlyRecommended
-      Type.Missing,                       //object CreateBackup
-      Excel.XlSaveAsAccessMode.xlNoChange,//XlSaveAsAccessMode AccessMode
-      Type.Missing,                       //object ConflictResolution
-      Type.Missing,                       //object AddToMru 
-      Type.Missing,                       //object TextCodepage
-      Type.Missing,                       //object TextVisualLayout
-      Type.Missing);                      //object Local
+            excelappworkbook.Saved = true;
+            excelappworkbook.SaveCopyAs("D:/expensescopy.xlsx");
+      //      excelappworkbook.SaveAs(@"D:/expenses.xlsx",  //object Filename
+      //Excel.XlFileFormat.xlOpenXMLWorkbook,          //object FileFormat
+      //Type.Missing,                       //object Password 
+      //Type.Missing,                       //object WriteResPassword  
+      //Type.Missing,                       //object ReadOnlyRecommended
+      //Type.Missing,                       //object CreateBackup
+      //Excel.XlSaveAsAccessMode.xlNoChange,//XlSaveAsAccessMode AccessMode
+      //Type.Missing,                       //object ConflictResolution
+      //Type.Missing,                       //object AddToMru 
+      //Type.Missing,                       //object TextCodepage
+      //Type.Missing,                       //object TextVisualLayout
+      //Type.Missing);                      //object Local
 
 
             string fullPath = Path.GetTempPath() + "expenses.png";

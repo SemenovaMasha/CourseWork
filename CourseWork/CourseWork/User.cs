@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SQLite;
 
 namespace CourseWork
@@ -24,7 +23,7 @@ namespace CourseWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Order order = new Order();
+            OrderCon order = new OrderCon();
             order.ShowDialog();
 
 //            if (order.DialogResult == DialogResult.OK)
@@ -106,10 +105,17 @@ namespace CourseWork
 //                sql.Close();
 //            }
         }
+        
 
-        private void button2_Click(object sender, EventArgs e)
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            OrderCon order = new OrderCon();
+            order.ShowDialog();
+        }
 
+        private void myOrdersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = ConnectionClass.getResult("select * from Orders where ClientID=" + ConnectionClass.ID + ";");
         }
     }
 }

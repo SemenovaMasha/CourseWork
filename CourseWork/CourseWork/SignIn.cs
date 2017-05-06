@@ -35,6 +35,7 @@ namespace CourseWork
             if (dt.Rows.Count > 0)
             {
                 this.Visible = false;
+                ConnectionClass.ID = Convert.ToInt32(dt.Rows[0][0].ToString());
                 if (Convert.ToInt32(dt.Rows[0][0].ToString()) == 1)
                 {
                     Admin a = new Admin();
