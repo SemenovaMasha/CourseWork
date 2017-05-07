@@ -106,5 +106,10 @@ namespace CourseWork
             Purchases purchases = new Purchases();
             purchases.ShowDialog();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Reports.paymentsPdf();
+        }
     }
 }

@@ -225,34 +225,42 @@ where Products.ID=Orders.ProductID and Orders.Status='InOrder';");
             DataTable dt = ConnectionClass.getResult(@"SELECT * FROM Material where Name='" + product.Rows[0][2].ToString() + "' ;");
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("Not enough material1");
+                MessageBox.Show("Not enough material1" + product.Rows[0][2].ToString());
                 return;
 
             }
             int oldValue = Convert.ToInt32(dt.Rows[0][2].ToString());
 
             //oldValue -= 100;
-            if (oldValue < Convert.ToInt32(product.Rows[0][3].ToString())) canBeMade = false;
+            if (oldValue < Convert.ToInt32(product.Rows[0][3].ToString()))
+            {
+                MessageBox.Show("Not enough material2" + product.Rows[0][2].ToString()+" "+Convert.ToInt32(product.Rows[0][3].ToString()));
+                return;
+            }
             int oldValue2=0;
             if (dataGridView1.SelectedRows[0].Cells[3].Value.ToString() == "Cupboard")
             {
                 dt = ConnectionClass.getResult(@"SELECT * FROM Material where Name='" + product.Rows[0][4].ToString() + "' ;");
                 if (dt.Rows.Count == 0)
                 {
-                    MessageBox.Show("Not enough material2"+ product.Rows[0][4].ToString());
+                    MessageBox.Show("Not enough material3"+ product.Rows[0][4].ToString());
                     return;
 
                 }
                 oldValue2 = Convert.ToInt32(dt.Rows[0][2].ToString());
                 //oldValue2 -= 100;
-                if (oldValue2 < Convert.ToInt32(product.Rows[0][5].ToString())) canBeMade = false;
+                if (oldValue2 < Convert.ToInt32(product.Rows[0][5].ToString()))
+                {
+                    MessageBox.Show("Not enough material4" + product.Rows[0][2].ToString() + " " + Convert.ToInt32(product.Rows[0][5].ToString()));
+                    return;
+                }
             }
 
-            if (!canBeMade)
-            {
-                MessageBox.Show("Not enough material3");
-                return;
-            }
+            //if (!canBeMade)
+            //{
+            //    MessageBox.Show("Not enough material4");
+            //    return;
+            //}
 
             oldValue -= Convert.ToInt32(product.Rows[0][3].ToString());
             ConnectionClass.executeQuery(@"update Material set Volume=" + oldValue + " where Name='" + product.Rows[0][2].ToString() + "';");

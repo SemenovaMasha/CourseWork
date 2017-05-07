@@ -25,5 +25,10 @@ namespace CourseWork
             //    "ProductID, Products.Type, Products.Material, Sales.Price,  Sales.Data" +
             //    " FROM  Sales,Products,Client where Products.ID = Sales.ProductID and Sales.ClientID=Client.ID; ");
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reports.sellsPdf();
+        }
     }
 }

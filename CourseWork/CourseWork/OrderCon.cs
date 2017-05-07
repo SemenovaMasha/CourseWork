@@ -179,7 +179,7 @@ namespace CourseWork
                     + comboBox1.Text + "','" + chairMaterial.Text + "','" + chairHeight.Value + "',null,null,'" +p + "','" + "InStore" + "','" + "image" + "');");
                 
                 DataTable dtb = ConnectionClass.getResult("select Volume from Material where Name='"+chairMaterial.Text+"';");
-                if (dtb.Rows.Count > 0 &&.ToInt32(dtb.Rows[0][0].ToString()) >= Convert.ToInt32(chairHeight.Text))
+                if (dtb.Rows.Count > 0 &&Convert.ToInt32(dtb.Rows[0][0].ToString()) >= Convert.ToInt32(chairHeight.Text))
                     MessageBox.Show("Price: " + p);
                 else {
                     dtb = ConnectionClass.getResult("select min(Time) from ProvidersList where Material='" + chairMaterial.Text + "';");

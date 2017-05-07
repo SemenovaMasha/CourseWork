@@ -6,6 +6,7 @@ using iTextSharp.text.pdf;
 using System.Drawing;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace CourseWork
 {
@@ -522,6 +523,177 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
 
 
         }
+
+        static public void paymentsPdf()
+        {
+            int month = 5;
+
+            DataTable dt = ConnectionClass.getResult("select ProviderID" +
+                " from Purchase where cast(substr(Data,4,2) as integer) = "+month+" group by ProviderID");
+
+            List<int> provIdList = new List<int>();
+            for(int i = 0; i < dt.Rows.Count; i++)
+                provIdList.Add(Convert.ToInt32(dt.Rows[i][0].ToString()));
+
+            var doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(@"D:\Payments.pdf",
+            FileMode.Create)); doc.Open();
+            BaseFont baseFont = BaseFont.CreateFont(@"D:\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+
+            foreach (int provId in provIdList)
+            {
+                Phrase phrase = new Phrase("От " + DateTime.Today.ToShortDateString(), new
+    iTextSharp.text.Font(baseFont, 15,
+    iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
+                Paragraph a1 = new Paragraph(phrase);
+                a1.Alignment = Element.ALIGN_RIGHT;
+                a1.Add(Environment.NewLine);
+                doc.Add(a1);
+                phrase = new Phrase("Счет на оплату", new
+         iTextSharp.text.Font(baseFont, 15,
+         iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
+                a1 = new Paragraph(phrase);
+                a1.Alignment = Element.ALIGN_CENTER;
+                a1.Add(Environment.NewLine);
+                a1.Add(Environment.NewLine);
+                doc.Add(a1);
+
+                dt = ConnectionClass.getResult("select Name,Address" +
+                   " from Providers where ID=" + provId);
+
+                phrase = new Phrase("Поставщик: "+dt.Rows[0][0].ToString() + ", "+dt.Rows[0][1].ToString(), new
+         iTextSharp.text.Font(baseFont, 15,
+         iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
+                a1 = new Paragraph(phrase);
+                a1.Alignment = Element.ALIGN_CENTER;
+                a1.Add(Environment.NewLine);
+                a1.Add(Environment.NewLine);
+                doc.Add(a1);
+
+                dt = ConnectionClass.getResult("select Material,Volume,Price,(Price*Volume) as Cost" +
+                    " from Purchase where cast(substr(Data,4,2) as integer) = " + month + " and ProviderID="+provId);
+                
+                PdfPTable table = new PdfPTable(5);
+                table.WidthPercentage = 100;
+                table.SetWidths(new float[] { 50, 70, 80, 80, 80 });
+
+                var font = new iTextSharp.text.Font(baseFont, 14, iTextSharp.text.Font.BOLD, new BaseColor(Color.Black));
+
+                PdfPCell cell = new PdfPCell();
+                cell.BackgroundColor = new BaseColor(Color.White);
+                cell.Phrase = new Phrase("№", font);
+                cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                table.AddCell(cell);
+                cell.Phrase = new Phrase("Наименование", font);
+                table.AddCell(cell);
+                cell.Phrase = new Phrase("Количество", font);
+                table.AddCell(cell);
+                cell.Phrase = new Phrase("Цена", font);
+                table.AddCell(cell);
+                cell.Phrase = new Phrase("Сумма", font);
+                table.AddCell(cell);
+
+                font = new iTextSharp.text.Font(baseFont, 12, iTextSharp.text.Font.NORMAL, new BaseColor(Color.Black));
+                cell.HorizontalAlignment = PdfPCell.ALIGN_LEFT;
+                int result = 0;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cell.Phrase = new Phrase((i + 1) + "", font);
+                    table.AddCell(cell);
+                    for (int j = 0; j < 4; j++)
+                    {
+                        cell.Phrase = new Phrase(dt.Rows[i][j].ToString(), font);
+                        table.AddCell(cell);
+                    }
+                    result += Convert.ToInt32(dt.Rows[i][3].ToString());
+                }
+
+                cell.Phrase = new Phrase("", font);
+                cell.Colspan = 3;
+                table.AddCell(cell);
+
+                cell.Phrase = new Phrase("Итого", font);
+                cell.Colspan = 1;
+                table.AddCell(cell);
+
+                cell.Phrase = new Phrase(result + "", font);
+                table.AddCell(cell);
+
+                doc.Add(table);
+
+                doc.NewPage();
+            }
+                        doc.Close();
+        }
+        static public void sellsPdf()
+        {
+            int month = 5;
+
+            DataTable dt = ConnectionClass.getResult("select Name, Surname,Patronymic, Address,Type,Material ,Orders.Price ,Data" +
+                " from Client,Products,Orders where cast(substr(Data,4,2) as integer) = " + month + " and Client.ID=Orders.ClientID and Orders.ProductID = Products.ID and Orders.Status = 'Sold';");
+            
+            var doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(@"D:\Sells.pdf",
+            FileMode.Create)); doc.Open();
+            BaseFont baseFont = BaseFont.CreateFont(@"D:\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+
+            Phrase phrase = new Phrase("", new
+  iTextSharp.text.Font(baseFont, 18,
+  iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
+            Paragraph a1 = new Paragraph(phrase);
+            a1.Alignment = Element.ALIGN_CENTER;
+            a1.Add(Environment.NewLine);
+            doc.Add(a1);
+
+            for (int i=0;i<dt.Rows.Count;i++)
+            {
+                 phrase = new Phrase("Договор продажи мебели", new
+      iTextSharp.text.Font(baseFont, 18,
+      iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
+                 a1 = new Paragraph(phrase);
+                a1.Alignment = Element.ALIGN_CENTER;
+                a1.Add(Environment.NewLine);
+                doc.Add(a1);
+                phrase = new Phrase("От " +dt.Rows[i][7].ToString(), new
+    iTextSharp.text.Font(baseFont, 12,
+    iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
+                a1 = new Paragraph(phrase);
+                a1.Alignment = Element.ALIGN_RIGHT;
+                a1.Add(Environment.NewLine);
+                doc.Add(a1);
+                
+                phrase = new Phrase("Покупатель: " + dt.Rows[i][1].ToString() + " "+dt.Rows[i][0].ToString() + " " + dt.Rows[i][2].ToString() + ", " + dt.Rows[i][3].ToString(), new
+         iTextSharp.text.Font(baseFont, 14,
+         iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
+                a1 = new Paragraph(phrase);
+                a1.Alignment = Element.ALIGN_LEFT;
+                a1.Add(Environment.NewLine);
+                a1.Add(Environment.NewLine);
+                doc.Add(a1);
+
+                phrase = new Phrase("Описание мебели:", new
+    iTextSharp.text.Font(baseFont, 14,
+    iTextSharp.text.Font.BOLD, new BaseColor(Color.FromArgb(0, 0, 0))));
+                a1 = new Paragraph(phrase);
+                a1.Alignment = Element.ALIGN_LEFT;
+                a1.Add(Environment.NewLine);
+                doc.Add(a1);
+
+                phrase = new Phrase("Тип: " + dt.Rows[i][4].ToString() + "\r\nМатериал: " + dt.Rows[i][5].ToString()+ "\r\nЦена: " + dt.Rows[i][6].ToString()  , new
+         iTextSharp.text.Font(baseFont, 14,
+         iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
+                a1 = new Paragraph(phrase);
+                a1.Alignment = Element.ALIGN_LEFT;
+                a1.Add(Environment.NewLine);
+                a1.Add(Environment.NewLine);
+                doc.Add(a1);
+
+
+                doc.NewPage();
+            }
+            doc.Close();
+        }
+
     }
 
 }

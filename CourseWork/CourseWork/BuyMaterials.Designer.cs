@@ -62,7 +62,7 @@
             // 
             this.Volume.Location = new System.Drawing.Point(19, 314);
             this.Volume.Maximum = new decimal(new int[] {
-            1000,
+            10000,
             0,
             0,
             0});
