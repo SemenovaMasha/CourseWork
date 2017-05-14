@@ -14,7 +14,6 @@ namespace CourseWork
    
     public partial class Providers : Form
     {
-        SQLiteConnection sql;
         public Providers()
         {
             InitializeComponent();

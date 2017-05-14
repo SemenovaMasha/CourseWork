@@ -38,30 +38,30 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Table = new System.Windows.Forms.GroupBox();
+            this.tableWidth = new System.Windows.Forms.NumericUpDown();
+            this.tableHeight = new System.Windows.Forms.NumericUpDown();
+            this.legNumber = new System.Windows.Forms.NumericUpDown();
+            this.tableMaterial = new System.Windows.Forms.ComboBox();
             this.tableForm = new System.Windows.Forms.ComboBox();
             this.tableType = new System.Windows.Forms.ComboBox();
             this.Cupboard = new System.Windows.Forms.GroupBox();
-            this.cupType = new System.Windows.Forms.ComboBox();
-            this.cupMaterial = new System.Windows.Forms.ComboBox();
-            this.doorMaterial = new System.Windows.Forms.ComboBox();
-            this.tableMaterial = new System.Windows.Forms.ComboBox();
-            this.cupHeight = new System.Windows.Forms.NumericUpDown();
-            this.cupWidth = new System.Windows.Forms.NumericUpDown();
             this.shelfNum = new System.Windows.Forms.NumericUpDown();
-            this.legNumber = new System.Windows.Forms.NumericUpDown();
-            this.tableWidth = new System.Windows.Forms.NumericUpDown();
-            this.tableHeight = new System.Windows.Forms.NumericUpDown();
+            this.cupWidth = new System.Windows.Forms.NumericUpDown();
+            this.cupHeight = new System.Windows.Forms.NumericUpDown();
+            this.doorMaterial = new System.Windows.Forms.ComboBox();
+            this.cupMaterial = new System.Windows.Forms.ComboBox();
+            this.cupType = new System.Windows.Forms.ComboBox();
             this.Chair.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chairHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.Table.SuspendLayout();
-            this.Cupboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cupHeight)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cupWidth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shelfNum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.legNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableHeight)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.legNumber)).BeginInit();
+            this.Cupboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.shelfNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cupWidth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cupHeight)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -177,170 +177,12 @@
             this.Table.Controls.Add(this.tableMaterial);
             this.Table.Controls.Add(this.tableForm);
             this.Table.Controls.Add(this.tableType);
-            this.Table.Location = new System.Drawing.Point(1054, 55);
+            this.Table.Location = new System.Drawing.Point(1095, 55);
             this.Table.Name = "Table";
             this.Table.Size = new System.Drawing.Size(287, 286);
             this.Table.TabIndex = 10;
             this.Table.TabStop = false;
             this.Table.Text = "Table";
-            // 
-            // tableForm
-            // 
-            this.tableForm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tableForm.FormattingEnabled = true;
-            this.tableForm.Location = new System.Drawing.Point(146, 115);
-            this.tableForm.Name = "tableForm";
-            this.tableForm.Size = new System.Drawing.Size(113, 21);
-            this.tableForm.TabIndex = 3;
-            // 
-            // tableType
-            // 
-            this.tableType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tableType.FormattingEnabled = true;
-            this.tableType.Location = new System.Drawing.Point(146, 35);
-            this.tableType.Name = "tableType";
-            this.tableType.Size = new System.Drawing.Size(113, 21);
-            this.tableType.TabIndex = 2;
-            this.tableType.SelectedIndexChanged += new System.EventHandler(this.tableType_SelectedIndexChanged);
-            // 
-            // Cupboard
-            // 
-            this.Cupboard.Controls.Add(this.shelfNum);
-            this.Cupboard.Controls.Add(this.cupWidth);
-            this.Cupboard.Controls.Add(this.cupHeight);
-            this.Cupboard.Controls.Add(this.doorMaterial);
-            this.Cupboard.Controls.Add(this.cupMaterial);
-            this.Cupboard.Controls.Add(this.cupType);
-            this.Cupboard.Location = new System.Drawing.Point(761, 55);
-            this.Cupboard.Name = "Cupboard";
-            this.Cupboard.Size = new System.Drawing.Size(287, 286);
-            this.Cupboard.TabIndex = 9;
-            this.Cupboard.TabStop = false;
-            this.Cupboard.Text = "Cupboard";
-            // 
-            // cupType
-            // 
-            this.cupType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cupType.FormattingEnabled = true;
-            this.cupType.Location = new System.Drawing.Point(163, 35);
-            this.cupType.Name = "cupType";
-            this.cupType.Size = new System.Drawing.Size(108, 21);
-            this.cupType.TabIndex = 2;
-            // 
-            // cupMaterial
-            // 
-            this.cupMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cupMaterial.FormattingEnabled = true;
-            this.cupMaterial.Location = new System.Drawing.Point(163, 62);
-            this.cupMaterial.Name = "cupMaterial";
-            this.cupMaterial.Size = new System.Drawing.Size(108, 21);
-            this.cupMaterial.TabIndex = 7;
-            // 
-            // doorMaterial
-            // 
-            this.doorMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.doorMaterial.FormattingEnabled = true;
-            this.doorMaterial.Location = new System.Drawing.Point(163, 139);
-            this.doorMaterial.Name = "doorMaterial";
-            this.doorMaterial.Size = new System.Drawing.Size(108, 21);
-            this.doorMaterial.TabIndex = 8;
-            // 
-            // tableMaterial
-            // 
-            this.tableMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.tableMaterial.FormattingEnabled = true;
-            this.tableMaterial.Location = new System.Drawing.Point(146, 61);
-            this.tableMaterial.Name = "tableMaterial";
-            this.tableMaterial.Size = new System.Drawing.Size(113, 21);
-            this.tableMaterial.TabIndex = 7;
-            // 
-            // cupHeight
-            // 
-            this.cupHeight.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.cupHeight.Location = new System.Drawing.Point(163, 90);
-            this.cupHeight.Maximum = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-            this.cupHeight.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.cupHeight.Name = "cupHeight";
-            this.cupHeight.Size = new System.Drawing.Size(108, 20);
-            this.cupHeight.TabIndex = 9;
-            this.cupHeight.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // cupWidth
-            // 
-            this.cupWidth.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.cupWidth.Location = new System.Drawing.Point(163, 113);
-            this.cupWidth.Maximum = new decimal(new int[] {
-            150,
-            0,
-            0,
-            0});
-            this.cupWidth.Minimum = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            this.cupWidth.Name = "cupWidth";
-            this.cupWidth.Size = new System.Drawing.Size(108, 20);
-            this.cupWidth.TabIndex = 10;
-            this.cupWidth.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // shelfNum
-            // 
-            this.shelfNum.Location = new System.Drawing.Point(163, 166);
-            this.shelfNum.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.shelfNum.Name = "shelfNum";
-            this.shelfNum.Size = new System.Drawing.Size(108, 20);
-            this.shelfNum.TabIndex = 12;
-            this.shelfNum.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            // 
-            // legNumber
-            // 
-            this.legNumber.Location = new System.Drawing.Point(146, 88);
-            this.legNumber.Maximum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.legNumber.Name = "legNumber";
-            this.legNumber.Size = new System.Drawing.Size(113, 20);
-            this.legNumber.TabIndex = 13;
-            this.legNumber.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // tableWidth
             // 
@@ -396,11 +238,179 @@
             0,
             0});
             // 
+            // legNumber
+            // 
+            this.legNumber.Increment = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.legNumber.Location = new System.Drawing.Point(146, 88);
+            this.legNumber.Maximum = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.legNumber.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.legNumber.Name = "legNumber";
+            this.legNumber.Size = new System.Drawing.Size(113, 20);
+            this.legNumber.TabIndex = 13;
+            this.legNumber.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // tableMaterial
+            // 
+            this.tableMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tableMaterial.FormattingEnabled = true;
+            this.tableMaterial.Location = new System.Drawing.Point(146, 61);
+            this.tableMaterial.Name = "tableMaterial";
+            this.tableMaterial.Size = new System.Drawing.Size(113, 21);
+            this.tableMaterial.TabIndex = 7;
+            // 
+            // tableForm
+            // 
+            this.tableForm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tableForm.FormattingEnabled = true;
+            this.tableForm.Location = new System.Drawing.Point(146, 115);
+            this.tableForm.Name = "tableForm";
+            this.tableForm.Size = new System.Drawing.Size(113, 21);
+            this.tableForm.TabIndex = 3;
+            // 
+            // tableType
+            // 
+            this.tableType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tableType.FormattingEnabled = true;
+            this.tableType.Location = new System.Drawing.Point(146, 35);
+            this.tableType.Name = "tableType";
+            this.tableType.Size = new System.Drawing.Size(113, 21);
+            this.tableType.TabIndex = 2;
+            this.tableType.SelectedIndexChanged += new System.EventHandler(this.tableType_SelectedIndexChanged);
+            // 
+            // Cupboard
+            // 
+            this.Cupboard.Controls.Add(this.shelfNum);
+            this.Cupboard.Controls.Add(this.cupWidth);
+            this.Cupboard.Controls.Add(this.cupHeight);
+            this.Cupboard.Controls.Add(this.doorMaterial);
+            this.Cupboard.Controls.Add(this.cupMaterial);
+            this.Cupboard.Controls.Add(this.cupType);
+            this.Cupboard.Location = new System.Drawing.Point(775, 55);
+            this.Cupboard.Name = "Cupboard";
+            this.Cupboard.Size = new System.Drawing.Size(287, 286);
+            this.Cupboard.TabIndex = 9;
+            this.Cupboard.TabStop = false;
+            this.Cupboard.Text = "Cupboard";
+            // 
+            // shelfNum
+            // 
+            this.shelfNum.Location = new System.Drawing.Point(163, 166);
+            this.shelfNum.Maximum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.shelfNum.Name = "shelfNum";
+            this.shelfNum.Size = new System.Drawing.Size(108, 20);
+            this.shelfNum.TabIndex = 12;
+            this.shelfNum.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            // 
+            // cupWidth
+            // 
+            this.cupWidth.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.cupWidth.Location = new System.Drawing.Point(163, 113);
+            this.cupWidth.Maximum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.cupWidth.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.cupWidth.Name = "cupWidth";
+            this.cupWidth.Size = new System.Drawing.Size(108, 20);
+            this.cupWidth.TabIndex = 10;
+            this.cupWidth.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // cupHeight
+            // 
+            this.cupHeight.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.cupHeight.Location = new System.Drawing.Point(163, 90);
+            this.cupHeight.Maximum = new decimal(new int[] {
+            150,
+            0,
+            0,
+            0});
+            this.cupHeight.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            this.cupHeight.Name = "cupHeight";
+            this.cupHeight.Size = new System.Drawing.Size(108, 20);
+            this.cupHeight.TabIndex = 9;
+            this.cupHeight.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // doorMaterial
+            // 
+            this.doorMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.doorMaterial.FormattingEnabled = true;
+            this.doorMaterial.Location = new System.Drawing.Point(163, 139);
+            this.doorMaterial.Name = "doorMaterial";
+            this.doorMaterial.Size = new System.Drawing.Size(108, 21);
+            this.doorMaterial.TabIndex = 8;
+            // 
+            // cupMaterial
+            // 
+            this.cupMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cupMaterial.FormattingEnabled = true;
+            this.cupMaterial.Location = new System.Drawing.Point(163, 62);
+            this.cupMaterial.Name = "cupMaterial";
+            this.cupMaterial.Size = new System.Drawing.Size(108, 21);
+            this.cupMaterial.TabIndex = 7;
+            // 
+            // cupType
+            // 
+            this.cupType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cupType.FormattingEnabled = true;
+            this.cupType.Location = new System.Drawing.Point(163, 35);
+            this.cupType.Name = "cupType";
+            this.cupType.Size = new System.Drawing.Size(108, 21);
+            this.cupType.TabIndex = 2;
+            // 
             // OrderCon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(750, 480);
+            this.ClientSize = new System.Drawing.Size(746, 478);
             this.Controls.Add(this.Table);
             this.Controls.Add(this.Cupboard);
             this.Controls.Add(this.button1);
@@ -414,13 +424,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.chairHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Table.ResumeLayout(false);
-            this.Cupboard.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cupHeight)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cupWidth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.shelfNum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.legNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableHeight)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.legNumber)).EndInit();
+            this.Cupboard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.shelfNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cupWidth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cupHeight)).EndInit();
             this.ResumeLayout(false);
 
         }

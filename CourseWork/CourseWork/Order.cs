@@ -13,8 +13,7 @@ namespace CourseWork
 {
     public partial class Order : Form
     {
-
-        SQLiteConnection sql;
+        
         public Order()
         {
             InitializeComponent();

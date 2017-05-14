@@ -11,7 +11,7 @@ namespace CourseWork
     static class ConnectionClass
     {
         public static SQLiteConnection sql = new SQLiteConnection(@"Data Source=D:\mydb.sqlite;Version=3");
-        public static int ID;
+        public static int ID=4;
 
         static ConnectionClass()
         {

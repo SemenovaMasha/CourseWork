@@ -43,6 +43,7 @@
             this.expencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effectivenessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sendToEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -134,7 +135,8 @@
             this.reportsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.incomesToolStripMenuItem,
             this.expencesToolStripMenuItem,
-            this.effectivenessToolStripMenuItem});
+            this.effectivenessToolStripMenuItem,
+            this.sendToEmailToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportsToolStripMenuItem.Text = "Reports";
@@ -142,21 +144,21 @@
             // incomesToolStripMenuItem
             // 
             this.incomesToolStripMenuItem.Name = "incomesToolStripMenuItem";
-            this.incomesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.incomesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.incomesToolStripMenuItem.Text = "Incomes";
             this.incomesToolStripMenuItem.Click += new System.EventHandler(this.incomesToolStripMenuItem_Click);
             // 
             // expencesToolStripMenuItem
             // 
             this.expencesToolStripMenuItem.Name = "expencesToolStripMenuItem";
-            this.expencesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.expencesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.expencesToolStripMenuItem.Text = "Expenses";
             this.expencesToolStripMenuItem.Click += new System.EventHandler(this.expencesToolStripMenuItem_Click);
             // 
             // effectivenessToolStripMenuItem
             // 
             this.effectivenessToolStripMenuItem.Name = "effectivenessToolStripMenuItem";
-            this.effectivenessToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.effectivenessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.effectivenessToolStripMenuItem.Text = "Effectiveness";
             this.effectivenessToolStripMenuItem.Click += new System.EventHandler(this.effectivenessToolStripMenuItem_Click);
             // 
@@ -167,6 +169,13 @@
             this.pictureBox1.Size = new System.Drawing.Size(559, 433);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // sendToEmailToolStripMenuItem
+            // 
+            this.sendToEmailToolStripMenuItem.Name = "sendToEmailToolStripMenuItem";
+            this.sendToEmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sendToEmailToolStripMenuItem.Text = "SendToEmail";
+            this.sendToEmailToolStripMenuItem.Click += new System.EventHandler(this.sendToEmailToolStripMenuItem_Click);
             // 
             // Admin
             // 
@@ -202,6 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem expencesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem effectivenessToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem sendToEmailToolStripMenuItem;
     }
 }
 

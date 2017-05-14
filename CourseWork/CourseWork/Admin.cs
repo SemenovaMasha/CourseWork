@@ -14,7 +14,6 @@ namespace CourseWork
 {
     public partial class Admin : Form
     {
-        SQLiteConnection sql;
         public Admin()
         {
             InitializeComponent();
@@ -103,6 +102,12 @@ namespace CourseWork
             {
                 ConnectionClass.createEmptyDataBase(sd.FileName.EndsWith(".sqlite")? sd.FileName: sd.FileName+".sqlite");
             }
+        }
+
+        private void sendToEmailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SendToEmail se = new SendToEmail();
+            se.ShowDialog();
         }
     }
 }

@@ -625,11 +625,11 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             }
                         doc.Close();
         }
-        static public void sellsPdf()
+        static public void sellsPdf(PictureBox p)
         {
             int month = 5;
 
-            DataTable dt = ConnectionClass.getResult("select Name, Surname,Patronymic, Address,Type,Material ,Orders.Price ,Data" +
+            DataTable dt = ConnectionClass.getResult("select Name, Surname,Patronymic, Address,Type,Material ,Orders.Price ,Data,Image" +
                 " from Client,Products,Orders where cast(substr(Data,4,2) as integer) = " + month + " and Client.ID=Orders.ClientID and Orders.ProductID = Products.ID and Orders.Status = 'Sold';");
             
             var doc = new Document();
@@ -689,11 +689,56 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
                 doc.Add(a1);
 
 
+                //try
+                //{
+                //    byte[] bitmapBytes = Convert.FromBase64String(dt.Rows[i][9].ToString());
+                //    using (MemoryStream memoryStream = new MemoryStream(bitmapBytes))
+                //    {
+                //        iTextSharp.text.Image chartImage = iTextSharp.text.Image.GetInstance(memoryStream.GetBuffer());
+                //        //chartImage.ScalePercent(75f);
+                //        chartImage.Alignment = Element.ALIGN_CENTER;
+                //        doc.Add(chartImage);
+                //    }
+                //}
+                //catch (Exception e) { }
+
+                //try
+                //{
+                if (dt.Rows[i][8].ToString() != "image")
+                {
+                    using (MemoryStream stream = new MemoryStream())
+                    {
+                        MessageBox.Show(dt.Rows[i][8].ToString().Length + "");
+                        System.Drawing.Image image = getImage(dt.Rows[i][8].ToString());
+
+                        p.Image = image;
+
+                        iTextSharp.text.Image chartImage = iTextSharp.text.Image.GetInstance(image, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        //chartImage.ScalePercent(75f);
+                        chartImage.Alignment = Element.ALIGN_CENTER;
+                        doc.Add(chartImage);
+                    }
+                }
+                //}
+                //catch (Exception e) {  }
+
+
                 doc.NewPage();
             }
             doc.Close();
         }
 
+
+        static System.Drawing.Image getImage(string bitmapString)
+        {
+            byte[] bitmapBytes = Convert.FromBase64String(bitmapString);
+            System.Drawing.Image img;
+            using (MemoryStream memoryStream = new MemoryStream(bitmapBytes))
+            {
+                img = System.Drawing.Image.FromStream(memoryStream);
+            }
+            return img;
+        }
     }
 
 }

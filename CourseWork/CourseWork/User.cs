@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.IO;
 
 namespace CourseWork
 {
@@ -115,7 +116,36 @@ namespace CourseWork
 
         private void myOrdersToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pictureBox1.Visible = false;
+            dataGridView1.Visible = true;
             dataGridView1.DataSource = ConnectionClass.getResult("select * from Orders where ClientID=" + ConnectionClass.ID + ";");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ConnectionClass.getResult("select Image from Products where ID="+ dataGridView1.SelectedRows[0].Cells[0].Value);
+            MessageBox.Show((dt.Rows[0][0].ToString().Length) + "");
+            pictureBox1.Image = getImage(dt.Rows[0][0].ToString());
+        }
+
+
+        Image getImage(string bitmapString)
+        {
+            byte[] bitmapBytes = Convert.FromBase64String(bitmapString);
+            Image img;
+            using (MemoryStream memoryStream = new MemoryStream(bitmapBytes))
+            {
+                img = Image.FromStream(memoryStream);
+            }
+            return img;
+        }
+
+        private void showOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = true;
+            dataGridView1.Visible = false;
+            DataTable dt = ConnectionClass.getResult("select Image from Products where ID=" + dataGridView1.SelectedRows[0].Cells[2].Value);
+            pictureBox1.Image = getImage(dt.Rows[0][0].ToString());
         }
     }
 }

@@ -204,7 +204,6 @@ where Products.ID=Orders.ProductID and Orders.Status='InOrder';");
 
         private void button1_Click(object sender, EventArgs e)
         {
-            bool canBeMade = true;
             //sql.Open();
             int ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[2].Value);
 

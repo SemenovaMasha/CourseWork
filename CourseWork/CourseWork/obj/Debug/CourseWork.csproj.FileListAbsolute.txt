@@ -75,3 +75,4 @@ D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.User.resources
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.csproj.GenerateResource.Cache
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.exe
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.pdb
+D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.SendToEmail.resources
