@@ -60,7 +60,6 @@ D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.AddProvider.resources
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.BuyMaterials.resources
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Clients.resources
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Admin.resources
-D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.AddProduct.resources
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Order.resources
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.OrderCon.resources
 D:\CourseWork\CourseWork\CourseWork\obj\Debug\CourseWork.Orders.resources

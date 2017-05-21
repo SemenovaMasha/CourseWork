@@ -51,6 +51,24 @@
             this.doorMaterial = new System.Windows.Forms.ComboBox();
             this.cupMaterial = new System.Windows.Forms.ComboBox();
             this.cupType = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.Chair.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chairHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,7 +86,7 @@
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(449, 16);
+            this.comboBox1.Location = new System.Drawing.Point(450, 47);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(113, 21);
             this.comboBox1.TabIndex = 1;
@@ -76,11 +94,15 @@
             // 
             // Chair
             // 
+            this.Chair.Controls.Add(this.label6);
+            this.Chair.Controls.Add(this.label5);
+            this.Chair.Controls.Add(this.label4);
+            this.Chair.Controls.Add(this.label3);
             this.Chair.Controls.Add(this.chairMaterial);
             this.Chair.Controls.Add(this.chairHeight);
             this.Chair.Controls.Add(this.chairForm);
             this.Chair.Controls.Add(this.ChairType);
-            this.Chair.Location = new System.Drawing.Point(449, 55);
+            this.Chair.Location = new System.Drawing.Point(450, 86);
             this.Chair.Name = "Chair";
             this.Chair.Size = new System.Drawing.Size(287, 286);
             this.Chair.TabIndex = 5;
@@ -146,7 +168,7 @@
             // 
             this.clientId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clientId.FormattingEnabled = true;
-            this.clientId.Location = new System.Drawing.Point(582, 17);
+            this.clientId.Location = new System.Drawing.Point(583, 48);
             this.clientId.Name = "clientId";
             this.clientId.Size = new System.Drawing.Size(110, 21);
             this.clientId.TabIndex = 6;
@@ -161,7 +183,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(460, 365);
+            this.button1.Location = new System.Drawing.Point(461, 396);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(137, 37);
             this.button1.TabIndex = 8;
@@ -171,13 +193,19 @@
             // 
             // Table
             // 
+            this.Table.Controls.Add(this.label8);
+            this.Table.Controls.Add(this.label13);
+            this.Table.Controls.Add(this.label14);
+            this.Table.Controls.Add(this.label15);
+            this.Table.Controls.Add(this.label16);
+            this.Table.Controls.Add(this.label17);
             this.Table.Controls.Add(this.tableWidth);
             this.Table.Controls.Add(this.tableHeight);
             this.Table.Controls.Add(this.legNumber);
             this.Table.Controls.Add(this.tableMaterial);
             this.Table.Controls.Add(this.tableForm);
             this.Table.Controls.Add(this.tableType);
-            this.Table.Location = new System.Drawing.Point(1095, 55);
+            this.Table.Location = new System.Drawing.Point(1096, 86);
             this.Table.Name = "Table";
             this.Table.Size = new System.Drawing.Size(287, 286);
             this.Table.TabIndex = 10;
@@ -295,13 +323,19 @@
             // 
             // Cupboard
             // 
+            this.Cupboard.Controls.Add(this.label11);
+            this.Cupboard.Controls.Add(this.label12);
+            this.Cupboard.Controls.Add(this.label19);
+            this.Cupboard.Controls.Add(this.label7);
+            this.Cupboard.Controls.Add(this.label9);
+            this.Cupboard.Controls.Add(this.label10);
             this.Cupboard.Controls.Add(this.shelfNum);
             this.Cupboard.Controls.Add(this.cupWidth);
             this.Cupboard.Controls.Add(this.cupHeight);
             this.Cupboard.Controls.Add(this.doorMaterial);
             this.Cupboard.Controls.Add(this.cupMaterial);
             this.Cupboard.Controls.Add(this.cupType);
-            this.Cupboard.Location = new System.Drawing.Point(775, 55);
+            this.Cupboard.Location = new System.Drawing.Point(776, 86);
             this.Cupboard.Name = "Cupboard";
             this.Cupboard.Size = new System.Drawing.Size(287, 286);
             this.Cupboard.TabIndex = 9;
@@ -310,7 +344,7 @@
             // 
             // shelfNum
             // 
-            this.shelfNum.Location = new System.Drawing.Point(163, 166);
+            this.shelfNum.Location = new System.Drawing.Point(142, 165);
             this.shelfNum.Maximum = new decimal(new int[] {
             3,
             0,
@@ -332,7 +366,7 @@
             0,
             0,
             0});
-            this.cupWidth.Location = new System.Drawing.Point(163, 113);
+            this.cupWidth.Location = new System.Drawing.Point(142, 112);
             this.cupWidth.Maximum = new decimal(new int[] {
             150,
             0,
@@ -359,7 +393,7 @@
             0,
             0,
             0});
-            this.cupHeight.Location = new System.Drawing.Point(163, 90);
+            this.cupHeight.Location = new System.Drawing.Point(142, 89);
             this.cupHeight.Maximum = new decimal(new int[] {
             150,
             0,
@@ -383,7 +417,7 @@
             // 
             this.doorMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.doorMaterial.FormattingEnabled = true;
-            this.doorMaterial.Location = new System.Drawing.Point(163, 139);
+            this.doorMaterial.Location = new System.Drawing.Point(142, 138);
             this.doorMaterial.Name = "doorMaterial";
             this.doorMaterial.Size = new System.Drawing.Size(108, 21);
             this.doorMaterial.TabIndex = 8;
@@ -392,7 +426,7 @@
             // 
             this.cupMaterial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cupMaterial.FormattingEnabled = true;
-            this.cupMaterial.Location = new System.Drawing.Point(163, 62);
+            this.cupMaterial.Location = new System.Drawing.Point(142, 61);
             this.cupMaterial.Name = "cupMaterial";
             this.cupMaterial.Size = new System.Drawing.Size(108, 21);
             this.cupMaterial.TabIndex = 7;
@@ -401,16 +435,180 @@
             // 
             this.cupType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cupType.FormattingEnabled = true;
-            this.cupType.Location = new System.Drawing.Point(163, 35);
+            this.cupType.Location = new System.Drawing.Point(142, 34);
             this.cupType.Name = "cupType";
             this.cupType.Size = new System.Drawing.Size(108, 21);
             this.cupType.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(447, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Type";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(580, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "User";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 35);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(31, 13);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Type";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(23, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Material";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(24, 90);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Form";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(24, 118);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Height";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(37, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Height";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(36, 64);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Material";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(37, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Type";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(37, 167);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Shelf number";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(36, 141);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "DoorMaterial";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(37, 114);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(35, 13);
+            this.label19.TabIndex = 25;
+            this.label19.Text = "Width";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 170);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Width";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(29, 144);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(38, 13);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Height";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(30, 117);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(30, 13);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "Form";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(30, 93);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(63, 13);
+            this.label15.TabIndex = 30;
+            this.label15.Text = "Leg number";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(29, 67);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(44, 13);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Material";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(30, 38);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(31, 13);
+            this.label17.TabIndex = 28;
+            this.label17.Text = "Type";
             // 
             // OrderCon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 478);
+            this.ClientSize = new System.Drawing.Size(752, 474);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Table);
             this.Controls.Add(this.Cupboard);
             this.Controls.Add(this.button1);
@@ -421,17 +619,21 @@
             this.Name = "OrderCon";
             this.Text = "OrderCon";
             this.Chair.ResumeLayout(false);
+            this.Chair.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chairHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Table.ResumeLayout(false);
+            this.Table.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.legNumber)).EndInit();
             this.Cupboard.ResumeLayout(false);
+            this.Cupboard.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.shelfNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cupWidth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cupHeight)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -459,5 +661,23 @@
         private System.Windows.Forms.NumericUpDown tableHeight;
         private System.Windows.Forms.NumericUpDown legNumber;
         private System.Windows.Forms.NumericUpDown shelfNum;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

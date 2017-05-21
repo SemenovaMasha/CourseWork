@@ -28,7 +28,7 @@ namespace CourseWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Reports.sellsPdf(pictureBox1);
+            Reports.sellsPdf();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace CourseWork
 {
     class Reports
     {
-    static public void invoicesPdf()
+        static public void invoicesPdf()
     {
             DataTable dt = ConnectionClass.getResult("select Material,Volume,Price,Name,Data,(Price*Volume) as Cost" +
                 " from Purchase,Providers where Purchase.ProviderID = Providers.ID");
@@ -21,7 +21,8 @@ namespace CourseWork
         PdfWriter.GetInstance(doc, new FileStream(@"D:\Invoices.pdf",
         FileMode.Create)); doc.Open();
 
-        BaseFont baseFont = BaseFont.CreateFont(@"D:\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+           // BaseFont baseFont = BaseFont.CreateFont(@"D:\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            BaseFont baseFont = BaseFont.CreateFont(@"..\..\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
             Phrase phrase = new Phrase("От "+ DateTime.Today.ToShortDateString(), new
 iTextSharp.text.Font(baseFont, 15,
@@ -93,8 +94,6 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
 
             doc.Close();
     }
-
-
         static public void invoicesExcel(PictureBox p)
         {
 
@@ -181,20 +180,23 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelappworkbooks = excelapp.Workbooks;
             excelappworkbook = excelappworkbooks[1];
 
-            excelappworkbook.SaveAs(@"D:/invoices1.xls",  //object Filename
-      Excel.XlFileFormat.xlExcel12,          //object FileFormat
-      Type.Missing,                       //object Password 
-      Type.Missing,                       //object WriteResPassword  
-      Type.Missing,                       //object ReadOnlyRecommended
-      Type.Missing,                       //object CreateBackup
-      Excel.XlSaveAsAccessMode.xlNoChange,//XlSaveAsAccessMode AccessMode
-      Type.Missing,                       //object ConflictResolution
-      Type.Missing,                       //object AddToMru 
-      Type.Missing,                       //object TextCodepage
-      Type.Missing,                       //object TextVisualLayout
-      Type.Missing);                      //object Local
 
-            
+            excelappworkbook.Saved = true;
+            excelappworkbook.SaveCopyAs("D:/invoices.xlsx");
+      //      excelappworkbook.SaveAs(@"D:/invoices1.xls",  //object Filename
+      //Excel.XlFileFormat.xlExcel12,          //object FileFormat
+      //Type.Missing,                       //object Password 
+      //Type.Missing,                       //object WriteResPassword  
+      //Type.Missing,                       //object ReadOnlyRecommended
+      //Type.Missing,                       //object CreateBackup
+      //Excel.XlSaveAsAccessMode.xlNoChange,//XlSaveAsAccessMode AccessMode
+      //Type.Missing,                       //object ConflictResolution
+      //Type.Missing,                       //object AddToMru 
+      //Type.Missing,                       //object TextCodepage
+      //Type.Missing,                       //object TextVisualLayout
+      //Type.Missing);                      //object Local
+
+
             string fullPath = Path.GetTempPath() + "invoices.png";
             excelchart.Export(fullPath, "PNG",false);
             p.Image = new Bitmap( System.Drawing.Image.FromFile(fullPath), new Size(p.Width,p.Height));
@@ -314,7 +316,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelappworkbook = excelappworkbooks[1];
 
             excelappworkbook.Saved = true;
-            excelappworkbook.SaveCopyAs("D:/expensescopy.xlsx");
+            excelappworkbook.SaveCopyAs("D:/expenses.xlsx");
       //      excelappworkbook.SaveAs(@"D:/expenses.xlsx",  //object Filename
       //Excel.XlFileFormat.xlOpenXMLWorkbook,          //object FileFormat
       //Type.Missing,                       //object Password 
@@ -356,7 +358,6 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
 
             //p.Image = bmp;
         }
-
         static public void effectExcel(PictureBox p)
         {
             DataTable dt1 = ConnectionClass.getResult("select sum(Price * Volume), substr(Data,4,10) as d from Purchase where substr(Data,7,4)=='2017' group by d ;");
@@ -449,18 +450,20 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelappworkbooks = excelapp.Workbooks;
             excelappworkbook = excelappworkbooks[1];
 
-            excelappworkbook.SaveAs(@"D:/effectiveness.xlsx",  //object Filename
-      Excel.XlFileFormat.xlHtml,          //object FileFormat
-      Type.Missing,                       //object Password 
-      Type.Missing,                       //object WriteResPassword  
-      Type.Missing,                       //object ReadOnlyRecommended
-      Type.Missing,                       //object CreateBackup
-      Excel.XlSaveAsAccessMode.xlNoChange,//XlSaveAsAccessMode AccessMode
-      Type.Missing,                       //object ConflictResolution
-      Type.Missing,                       //object AddToMru 
-      Type.Missing,                       //object TextCodepage
-      Type.Missing,                       //object TextVisualLayout
-      Type.Missing);                      //object Local
+            excelappworkbook.Saved = true;
+            excelappworkbook.SaveCopyAs("D:/effectiveness.xlsx");
+      //      excelappworkbook.SaveAs(@"D:/effectiveness.xlsx",  //object Filename
+      //Excel.XlFileFormat.xlHtml,          //object FileFormat
+      //Type.Missing,                       //object Password 
+      //Type.Missing,                       //object WriteResPassword  
+      //Type.Missing,                       //object ReadOnlyRecommended
+      //Type.Missing,                       //object CreateBackup
+      //Excel.XlSaveAsAccessMode.xlNoChange,//XlSaveAsAccessMode AccessMode
+      //Type.Missing,                       //object ConflictResolution
+      //Type.Missing,                       //object AddToMru 
+      //Type.Missing,                       //object TextCodepage
+      //Type.Missing,                       //object TextVisualLayout
+      //Type.Missing);                      //object Local
 
 
             string fullPath = Path.GetTempPath() + "effectiveness.png";
@@ -522,8 +525,13 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             series.XValues = excelapp.get_Range("C3:N3", Type.Missing);
 
 
-        }
+            excelappworkbooks = excelapp.Workbooks;
+            excelappworkbook = excelappworkbooks[1];
 
+            //excelappworkbook.Saved = true;
+            //excelappworkbook.SaveCopyAs("D:/effectiveness.xlsx");
+            //excelapp.Quit();
+        }
         static public void paymentsPdf()
         {
             int month = 5;
@@ -538,7 +546,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             var doc = new Document();
             PdfWriter.GetInstance(doc, new FileStream(@"D:\Payments.pdf",
             FileMode.Create)); doc.Open();
-            BaseFont baseFont = BaseFont.CreateFont(@"D:\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            BaseFont baseFont = BaseFont.CreateFont(@"..\..\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
             foreach (int provId in provIdList)
             {
@@ -625,7 +633,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             }
                         doc.Close();
         }
-        static public void sellsPdf(PictureBox p)
+        static public void sellsPdf()
         {
             int month = 5;
 
@@ -635,7 +643,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             var doc = new Document();
             PdfWriter.GetInstance(doc, new FileStream(@"D:\Sells.pdf",
             FileMode.Create)); doc.Open();
-            BaseFont baseFont = BaseFont.CreateFont(@"D:\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+            BaseFont baseFont = BaseFont.CreateFont(@"..\..\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
             Phrase phrase = new Phrase("", new
   iTextSharp.text.Font(baseFont, 18,
@@ -710,8 +718,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
                     {
                         MessageBox.Show(dt.Rows[i][8].ToString().Length + "");
                         System.Drawing.Image image = getImage(dt.Rows[i][8].ToString());
-
-                        p.Image = image;
+                        
 
                         iTextSharp.text.Image chartImage = iTextSharp.text.Image.GetInstance(image, System.Drawing.Imaging.ImageFormat.Jpeg);
                         //chartImage.ScalePercent(75f);
@@ -727,7 +734,6 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             }
             doc.Close();
         }
-
 
         static System.Drawing.Image getImage(string bitmapString)
         {

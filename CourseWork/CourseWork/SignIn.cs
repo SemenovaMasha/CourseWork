@@ -61,19 +61,6 @@ namespace CourseWork
             this.Visible = false;
             SignUp signin = new SignUp();
             signin.ShowDialog();
-            if (signin.DialogResult == DialogResult.OK)
-            {
-                //sql = new SQLiteConnection(@"Data Source=D:\mydb.sqlite;Version=3");
-
-                //sql.Open();
-
-                //SQLiteCommand sc = new SQLiteCommand
-                        ConnectionClass.executeQuery(@"INSERT INTO Client(Name,Surname,Patronymic,Mail,Address,Phone,Login,Password)  
-VALUES('" + signin.ClientName.Text + "','" + signin.Surname.Text + "','" + signin.Patronymic.Text + "','" + signin.Mail.Text + "','" + signin.Address.Text + "','" + signin.Phone.Text + "','" + signin.Login.Text + "','" + signin.Password.Text + "');");
-
-                //sc.ExecuteNonQuery();
-                //sql.Close();
-            }
 
             this.Visible = true;
         }

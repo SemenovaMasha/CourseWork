@@ -13,7 +13,6 @@ namespace CourseWork
 {
     public partial class Orders : Form
     {
-        SQLiteConnection sql;
         public Orders()
         {
             InitializeComponent();
@@ -344,67 +343,6 @@ where Products.ID=Orders.ProductID and Orders.Status='InOrder';");
             //}
             displayOrders();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            sql.Open();
-            int ID = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[2].Value);
-
-            if (dataGridView1.SelectedRows[0].Cells[3].Value.ToString() == "Chair")
-            {
-                SQLiteCommand sc = new SQLiteCommand
-                          (@"update Chair set Status='Sold' where ID=" + ID + ";", sql);
-                sc.ExecuteNonQuery();
-
-                sc = new SQLiteCommand
-                          (@"delete  from Orders where ID=" + dataGridView1.SelectedRows[0].Cells[0].Value + ";", sql);
-                sc.ExecuteNonQuery();
-
-                string data = DateTime.Today.ToShortDateString();
-                sc = new SQLiteCommand
-                          (@"insert  into Sales(ClientID,ProductID,Price,Data) values(" 
-+ dataGridView1.SelectedRows[0].Cells[1].Value + "," + dataGridView1.SelectedRows[0].Cells[2].Value + "," + dataGridView1.SelectedRows[0].Cells[5].Value +",'"+data +"');", sql);
-                sc.ExecuteNonQuery();
-
-
-            }
-            else if (dataGridView1.SelectedRows[0].Cells[3].Value.ToString() == "Desk")
-            {
-
-                SQLiteCommand sc = new SQLiteCommand
-                          (@"update Desk set Status='Sold' where ID=" + ID + ";", sql);
-                sc.ExecuteNonQuery();
-
-                sc = new SQLiteCommand
-                          (@"delete  from Orders where ID=" + dataGridView1.SelectedRows[0].Cells[0].Value + ";", sql);
-                sc.ExecuteNonQuery();
-
-                string data = DateTime.Today.ToShortDateString();
-                sc = new SQLiteCommand
-                          (@"insert  into Sales(ClientID,ProductID,Price,Data) values("
-+ dataGridView1.SelectedRows[0].Cells[1].Value + "," + dataGridView1.SelectedRows[0].Cells[2].Value + "," + dataGridView1.SelectedRows[0].Cells[5].Value + ",'" + data + "');", sql);
-                sc.ExecuteNonQuery();
-            }
-            else
-            {
-                SQLiteCommand sc = new SQLiteCommand
-                          (@"update Cupboard set Status='Sold' where ID=" + ID + ";", sql);
-                sc.ExecuteNonQuery();
-
-                sc = new SQLiteCommand
-                          (@"delete  from Orders where ID=" + dataGridView1.SelectedRows[0].Cells[0].Value + ";", sql);
-                sc.ExecuteNonQuery();
-
-                string data = DateTime.Today.ToShortDateString();
-                sc = new SQLiteCommand
-                          (@"insert  into Sales(ClientID,ProductID,Price,Data) values("
-+ dataGridView1.SelectedRows[0].Cells[1].Value + "," + dataGridView1.SelectedRows[0].Cells[2].Value + "," + dataGridView1.SelectedRows[0].Cells[5].Value + ",'" + data + "');", sql);
-                sc.ExecuteNonQuery();
-
-            }
-
-            sql.Close();
-            displayOrders();
-        }
+        
     }
 }

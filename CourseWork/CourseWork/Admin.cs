@@ -109,5 +109,15 @@ namespace CourseWork
             SendToEmail se = new SendToEmail();
             se.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reports.invoicesPdf();
+        }
+
+        private void invoicesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reports.invoicesPdf();
+        }
     }
 }

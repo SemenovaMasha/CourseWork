@@ -20,6 +20,8 @@ namespace CourseWork
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
+            ConnectionClass.executeQuery("insert into Client( Name , Surname ,Patronymic ,Mail ,Address ,Phone ,Login ,Password )" +
+                " values('"+ClientName.Text+"','"+Surname.Text + "','" + Patronymic.Text + "','" + Mail.Text + "','" + Address.Text + "','" + Phone.Text + "','" + Login.Text + "','" + Password.Text+"') ");
             Close();
         }
     }

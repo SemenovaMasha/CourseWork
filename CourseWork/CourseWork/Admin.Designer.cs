@@ -42,8 +42,9 @@
             this.incomesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expencesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effectivenessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sendToEmailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.invoicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +57,7 @@
             this.reportsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(635, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(616, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -136,6 +137,7 @@
             this.incomesToolStripMenuItem,
             this.expencesToolStripMenuItem,
             this.effectivenessToolStripMenuItem,
+            this.invoicesToolStripMenuItem,
             this.sendToEmailToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
             this.reportsToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
@@ -162,6 +164,13 @@
             this.effectivenessToolStripMenuItem.Text = "Effectiveness";
             this.effectivenessToolStripMenuItem.Click += new System.EventHandler(this.effectivenessToolStripMenuItem_Click);
             // 
+            // sendToEmailToolStripMenuItem
+            // 
+            this.sendToEmailToolStripMenuItem.Name = "sendToEmailToolStripMenuItem";
+            this.sendToEmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sendToEmailToolStripMenuItem.Text = "SendToEmail";
+            this.sendToEmailToolStripMenuItem.Click += new System.EventHandler(this.sendToEmailToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(23, 43);
@@ -170,18 +179,18 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // sendToEmailToolStripMenuItem
+            // invoicesToolStripMenuItem
             // 
-            this.sendToEmailToolStripMenuItem.Name = "sendToEmailToolStripMenuItem";
-            this.sendToEmailToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.sendToEmailToolStripMenuItem.Text = "SendToEmail";
-            this.sendToEmailToolStripMenuItem.Click += new System.EventHandler(this.sendToEmailToolStripMenuItem_Click);
+            this.invoicesToolStripMenuItem.Name = "invoicesToolStripMenuItem";
+            this.invoicesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.invoicesToolStripMenuItem.Text = "Invoices";
+            this.invoicesToolStripMenuItem.Click += new System.EventHandler(this.invoicesToolStripMenuItem_Click);
             // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 505);
+            this.ClientSize = new System.Drawing.Size(616, 500);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -212,6 +221,7 @@
         private System.Windows.Forms.ToolStripMenuItem effectivenessToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripMenuItem sendToEmailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem invoicesToolStripMenuItem;
     }
 }
 

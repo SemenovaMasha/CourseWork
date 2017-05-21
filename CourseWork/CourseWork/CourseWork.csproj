@@ -133,12 +133,6 @@
     <Compile Include="Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddProduct.Designer.cs">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,9 +211,6 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddProduct.resx">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Order.resx">
       <DependentUpon>Order.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +263,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Tahoma.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

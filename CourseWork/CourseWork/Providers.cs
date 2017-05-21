@@ -53,7 +53,6 @@ namespace CourseWork
                 int maxID = Convert.ToInt32(dt.Rows[0][0]);
                // sdr.Close();
                                 
-                textBox1.Text = addProvider.dataGridView1.Rows.Count + "";
                 for (int i=0;i< addProvider.dataGridView1.Rows.Count-1; i++)
                 {
                     ConnectionClass.executeQuery
