@@ -110,7 +110,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 34);
             this.button1.TabIndex = 8;
-            this.button1.Text = "Sign Up";
+            this.button1.Text = "Зарегистрироваться";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -119,72 +119,72 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(17, 193);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Login";
+            this.label1.Text = "Логин";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(17, 219);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Password";
+            this.label2.Text = "Пароль";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(41, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Name";
+            this.label3.Text = "Имя";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(41, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(56, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Surname";
+            this.label4.Text = "Фамилия";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(41, 156);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
+            this.label5.Size = new System.Drawing.Size(52, 13);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Phone";
+            this.label5.Text = "Телефон";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(41, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(45, 13);
+            this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 14;
-            this.label6.Text = "Address";
+            this.label6.Text = "Адрес";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(41, 104);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 13);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Mail";
+            this.label7.Text = "Почта";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(41, 78);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
+            this.label8.Size = new System.Drawing.Size(54, 13);
             this.label8.TabIndex = 16;
-            this.label8.Text = "Patronymic";
+            this.label8.Text = "Отчество";
             // 
             // SignUp
             // 
@@ -209,7 +209,7 @@
             this.Controls.Add(this.Surname);
             this.Controls.Add(this.ClientName);
             this.Name = "SignUp";
-            this.Text = "SingUp";
+            this.Text = "Регистрация";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -32,9 +32,9 @@
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.myOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.showOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,16 +63,23 @@
             // orderToolStripMenuItem
             // 
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
-            this.orderToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.orderToolStripMenuItem.Text = "Order";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.orderToolStripMenuItem.Text = "Заказать";
             this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // myOrdersToolStripMenuItem
             // 
             this.myOrdersToolStripMenuItem.Name = "myOrdersToolStripMenuItem";
-            this.myOrdersToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.myOrdersToolStripMenuItem.Text = "MyOrders";
+            this.myOrdersToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.myOrdersToolStripMenuItem.Text = "Мои заказы";
             this.myOrdersToolStripMenuItem.Click += new System.EventHandler(this.myOrdersToolStripMenuItem_Click);
+            // 
+            // showOrderToolStripMenuItem
+            // 
+            this.showOrderToolStripMenuItem.Name = "showOrderToolStripMenuItem";
+            this.showOrderToolStripMenuItem.Size = new System.Drawing.Size(100, 20);
+            this.showOrderToolStripMenuItem.Text = "Показать заказ";
+            this.showOrderToolStripMenuItem.Click += new System.EventHandler(this.showOrderToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
@@ -91,13 +98,6 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // showOrderToolStripMenuItem
-            // 
-            this.showOrderToolStripMenuItem.Name = "showOrderToolStripMenuItem";
-            this.showOrderToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.showOrderToolStripMenuItem.Text = "ShowOrder";
-            this.showOrderToolStripMenuItem.Click += new System.EventHandler(this.showOrderToolStripMenuItem_Click);
-            // 
             // User
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,7 +109,7 @@
             this.Controls.Add(this.menuStrip2);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "User";
-            this.Text = "User";
+            this.Text = "Пользователь";
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

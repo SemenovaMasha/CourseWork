@@ -20,22 +20,22 @@ namespace CourseWork
         {
             InitializeComponent();
 
-            comboBox1.Items.Add("Chair");
-            comboBox1.Items.Add("Cupboard");
-            comboBox1.Items.Add("Table");
+            comboBox1.Items.Add("Стул");
+            comboBox1.Items.Add("Шкаф");
+            comboBox1.Items.Add("Стол");
 
-            chairForm.Items.Add("Square");
-            chairForm.Items.Add("Round");
-            ChairType.Items.Add("Computer");
-            ChairType.Items.Add("Kitchen");
+            chairForm.Items.Add("Квадратный");
+            chairForm.Items.Add("Круглый");
+            ChairType.Items.Add("Компьютерный");
+            ChairType.Items.Add("Кухонный");
 
-            cupType.Items.Add("Closet");
-            cupType.Items.Add("Usual");
+            cupType.Items.Add("Купе");
+            cupType.Items.Add("Обычный");
 
-            tableType.Items.Add("Computer");
-            tableType.Items.Add("Kitchen");
-            tableForm.Items.Add("Round");
-            tableForm.Items.Add("Square");
+            tableType.Items.Add("Компьютерный");
+            tableType.Items.Add("Кухонный");
+            tableForm.Items.Add("Круглый");
+            tableForm.Items.Add("Квадратный");
             
 
             DataTable dt = ConnectionClass.getResult(@"SELECT Login FROM Client where ID="+ConnectionClass.ID+";");
@@ -250,14 +250,14 @@ namespace CourseWork
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "Chair")
+            if (comboBox1.Text == "Стул")
             {
                 Chair.Left = 450;
                 Table.Left = 1000;
                 Cupboard.Left = 1000;
 
             }
-            else if (comboBox1.Text == "Table")
+            else if (comboBox1.Text == "Стол")
             {
                 Chair.Left = 1000;
                 Table.Left = 450;
@@ -361,14 +361,14 @@ VALUES(" + clientID + "," + nextID + "," + p + ",'InOrder','" + DateTime.Today.T
 
         private void ChairType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ChairType.Text == "Computer")
+            if (ChairType.Text == "Компьютерный")
                 chairForm.Enabled = false;
             else chairForm.Enabled = true;
         }
 
         private void tableType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tableType.Text == "Computer")
+            if (tableType.Text == "Компьютерный")
             {
                 tableForm.Enabled = false;
                 legNumber.Enabled = false;
@@ -389,7 +389,7 @@ VALUES(" + clientID + "," + nextID + "," + p + ",'InOrder','" + DateTime.Today.T
                 byte[] bitmapBytes = memoryStream.GetBuffer();
                 bitmapString = Convert.ToBase64String(bitmapBytes, Base64FormattingOptions.InsertLineBreaks);
             }
-            MessageBox.Show(bitmapString.Length+"");
+            //MessageBox.Show(bitmapString.Length+"");
             return bitmapString;
         }
     }

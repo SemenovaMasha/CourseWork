@@ -23,8 +23,8 @@ namespace CourseWork
             dataGridView1.DataSource = dt;
 
             
-            comboBox1.Items.Add("Materials");
-            comboBox1.Items.Add("Products");
+            comboBox1.Items.Add("Материалы");
+            comboBox1.Items.Add("Товары");
 
         }
 
@@ -39,7 +39,7 @@ namespace CourseWork
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "Materials")
+            if (comboBox1.Text == "Материалы")
             {
                 DataTable dt = ConnectionClass.getResult(@"SELECT * FROM Material;");
                 dataGridView1.DataSource = dt;

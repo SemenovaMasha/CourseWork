@@ -78,7 +78,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 41);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Buy material";
+            this.button1.Text = "Купить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -87,9 +87,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Name";
+            this.label1.Text = "Название";
             // 
             // label2
             // 
@@ -98,7 +98,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Volume";
+            this.label2.Text = "Объем";
             // 
             // BuyMaterials
             // 
@@ -112,7 +112,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.materials);
             this.Name = "BuyMaterials";
-            this.Text = "BuyMaterials";
+            this.Text = "Купить материалы";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Volume)).EndInit();
             this.ResumeLayout(false);

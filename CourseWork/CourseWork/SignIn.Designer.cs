@@ -38,35 +38,35 @@
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(78, 19);
+            this.Login.Location = new System.Drawing.Point(90, 19);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(106, 20);
             this.Login.TabIndex = 0;
             // 
             // Password
             // 
-            this.Password.Location = new System.Drawing.Point(76, 51);
+            this.Password.Location = new System.Drawing.Point(90, 51);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(107, 20);
+            this.Password.Size = new System.Drawing.Size(105, 20);
             this.Password.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(36, 90);
+            this.button1.Location = new System.Drawing.Point(37, 95);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 36);
+            this.button1.Size = new System.Drawing.Size(128, 36);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Sign In ";
+            this.button1.Text = "Войти";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(36, 132);
+            this.button2.Location = new System.Drawing.Point(37, 137);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 30);
+            this.button2.Size = new System.Drawing.Size(128, 30);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Sign Up";
+            this.button2.Text = "Зарегистрироваться";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -75,24 +75,24 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Login";
+            this.label1.Text = "Логин";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "Password";
+            this.label2.Text = "Пароль";
             // 
             // SignIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(195, 175);
+            this.ClientSize = new System.Drawing.Size(207, 187);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
@@ -100,7 +100,7 @@
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Login);
             this.Name = "SignIn";
-            this.Text = "SignIn";
+            this.Text = "Вход";
             this.ResumeLayout(false);
             this.PerformLayout();
 

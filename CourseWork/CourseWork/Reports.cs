@@ -18,7 +18,7 @@ namespace CourseWork
                 " from Purchase,Providers where Purchase.ProviderID = Providers.ID");
 
             var doc = new Document();
-        PdfWriter.GetInstance(doc, new FileStream(@"D:\Invoices.pdf",
+        PdfWriter.GetInstance(doc, new FileStream(@"D:\Reports\ПокупкаМатериалов.pdf",
         FileMode.Create)); doc.Open();
 
            // BaseFont baseFont = BaseFont.CreateFont(@"D:\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
@@ -93,6 +93,8 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             doc.Add(table);
 
             doc.Close();
+
+            MessageBox.Show("Отчет сформирован");
     }
         static public void invoicesExcel(PictureBox p)
         {
@@ -136,6 +138,9 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
                 excelcells = (Excel.Range)excelworksheet.Cells[4 + mat_k, 2];
                 excelcells.Value2 = mat;
                 mat_k++;
+
+                excelcells = (Excel.Range)excelworksheet.Cells[3 + mat_k, 3 ];
+                excelcells.Value2 = "0";
                 for (; i < dt.Rows.Count && dt.Rows[i][0].ToString() == mat; i++)
                 {
                     excelcells = (Excel.Range)excelworksheet.Cells[3 + mat_k, 2 + Convert.ToInt32(dt.Rows[i][2].ToString().Substring(0, 2))];
@@ -182,7 +187,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
 
 
             excelappworkbook.Saved = true;
-            excelappworkbook.SaveCopyAs("D:/invoices.xlsx");
+            excelappworkbook.SaveCopyAs("D:/Reports/Расходы.xlsx");
       //      excelappworkbook.SaveAs(@"D:/invoices1.xls",  //object Filename
       //Excel.XlFileFormat.xlExcel12,          //object FileFormat
       //Type.Missing,                       //object Password 
@@ -201,7 +206,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelchart.Export(fullPath, "PNG",false);
             p.Image = new Bitmap( System.Drawing.Image.FromFile(fullPath), new Size(p.Width,p.Height));
 
-           
+
 
             // excelappworkbook.Save();
             //excelapp.Quit();
@@ -227,6 +232,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             //}
 
             //p.Image = bmp;
+            MessageBox.Show("Отчет сформирован");
         }
         static public void expensesExcel(PictureBox p)
         {
@@ -270,6 +276,8 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
                 excelcells = (Excel.Range)excelworksheet.Cells[4 + mat_k, 2];
                 excelcells.Value2 = mat;
                 mat_k++;
+                excelcells = (Excel.Range)excelworksheet.Cells[3 + mat_k, 3];
+                excelcells.Value2 = "0";
                 for (; i < dt.Rows.Count && dt.Rows[i][0].ToString() == mat; i++)
                 {
                     excelcells = (Excel.Range)excelworksheet.Cells[3 + mat_k, 2 + Convert.ToInt32(dt.Rows[i][2].ToString().Substring(0, 2))];
@@ -316,7 +324,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelappworkbook = excelappworkbooks[1];
 
             excelappworkbook.Saved = true;
-            excelappworkbook.SaveCopyAs("D:/expenses.xlsx");
+            excelappworkbook.SaveCopyAs("D:/Reports/Доходы.xlsx");
       //      excelappworkbook.SaveAs(@"D:/expenses.xlsx",  //object Filename
       //Excel.XlFileFormat.xlOpenXMLWorkbook,          //object FileFormat
       //Type.Missing,                       //object Password 
@@ -357,6 +365,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             //}
 
             //p.Image = bmp;
+            MessageBox.Show("Отчет сформирован");
         }
         static public void effectExcel(PictureBox p)
         {
@@ -400,6 +409,10 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelcells.Value2 = "Прибыль";
 
 
+            excelcells = (Excel.Range)excelworksheet.Cells[4, 3];
+            excelcells.Value2 = "0";
+            excelcells = (Excel.Range)excelworksheet.Cells[5 , 3];
+            excelcells.Value2 = "0";
             for (int i = 0; i < dt1.Rows.Count;i++)
             {
                 excelcells = (Excel.Range)excelworksheet.Cells[4, 2 + Convert.ToInt32(dt1.Rows[i][1].ToString().Substring(0, 2))];
@@ -451,7 +464,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelappworkbook = excelappworkbooks[1];
 
             excelappworkbook.Saved = true;
-            excelappworkbook.SaveCopyAs("D:/effectiveness.xlsx");
+            excelappworkbook.SaveCopyAs("D:/Reports/Эффективность.xlsx");
       //      excelappworkbook.SaveAs(@"D:/effectiveness.xlsx",  //object Filename
       //Excel.XlFileFormat.xlHtml,          //object FileFormat
       //Type.Missing,                       //object Password 
@@ -465,10 +478,6 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
       //Type.Missing,                       //object TextVisualLayout
       //Type.Missing);                      //object Local
 
-
-            string fullPath = Path.GetTempPath() + "effectiveness.png";
-            excelchart.Export(fullPath, "PNG", false);
-            p.Image = new Bitmap(System.Drawing.Image.FromFile(fullPath), new Size(p.Width, p.Height));
             //excelappworkbook.Save();
             //return dt;
 
@@ -528,28 +537,36 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             excelappworkbooks = excelapp.Workbooks;
             excelappworkbook = excelappworkbooks[1];
 
-            //excelappworkbook.Saved = true;
-            //excelappworkbook.SaveCopyAs("D:/effectiveness.xlsx");
+
+            string fullPath = Path.GetTempPath() + "effectiveness.png";
+            excelchart.Export(fullPath, "PNG", false);
+            p.Image = new Bitmap(System.Drawing.Image.FromFile(fullPath), new Size(p.Width, p.Height));
+
+            excelappworkbook.Saved = true;
+            excelappworkbook.SaveCopyAs("D:/Reports/Эффективность.xlsx");
             //excelapp.Quit();
+            MessageBox.Show("Отчет сформирован");
         }
-        static public void paymentsPdf()
+        static public void paymentsPdf(int ID)
         {
             int month = 5;
 
             DataTable dt = ConnectionClass.getResult("select ProviderID" +
-                " from Purchase where cast(substr(Data,4,2) as integer) = "+month+" group by ProviderID");
+                " from Purchase where cast(substr(Data,4,2) as integer) = "+month+" and ProviderID ="+ID+" group by ProviderID ");
 
             List<int> provIdList = new List<int>();
             for(int i = 0; i < dt.Rows.Count; i++)
                 provIdList.Add(Convert.ToInt32(dt.Rows[i][0].ToString()));
 
-            var doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(@"D:\Payments.pdf",
-            FileMode.Create)); doc.Open();
             BaseFont baseFont = BaseFont.CreateFont(@"..\..\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
             foreach (int provId in provIdList)
             {
+                dt = ConnectionClass.getResult("select Name,Address" +
+                   " from Providers where ID=" + provId);
+            var doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(@"D:\Reports\Счета\"+ dt.Rows[0][0].ToString() + ".pdf",
+            FileMode.Create)); doc.Open();
                 Phrase phrase = new Phrase("От " + DateTime.Today.ToShortDateString(), new
     iTextSharp.text.Font(baseFont, 15,
     iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
@@ -557,7 +574,11 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
                 a1.Alignment = Element.ALIGN_RIGHT;
                 a1.Add(Environment.NewLine);
                 doc.Add(a1);
-                phrase = new Phrase("Счет на оплату", new
+
+                DataTable dt2 = ConnectionClass.getResult("select ID" +
+                " from Purchase where cast(substr(Data,4,2) as integer) = " + month + " and ProviderID="+provId);
+
+                phrase = new Phrase("Счет на оплату №"+dt2.Rows[0][0], new
          iTextSharp.text.Font(baseFont, 15,
          iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
                 a1 = new Paragraph(phrase);
@@ -566,8 +587,6 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
                 a1.Add(Environment.NewLine);
                 doc.Add(a1);
 
-                dt = ConnectionClass.getResult("select Name,Address" +
-                   " from Providers where ID=" + provId);
 
                 phrase = new Phrase("Поставщик: "+dt.Rows[0][0].ToString() + ", "+dt.Rows[0][1].ToString(), new
          iTextSharp.text.Font(baseFont, 15,
@@ -629,19 +648,22 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
 
                 doc.Add(table);
 
-                doc.NewPage();
-            }
+                //doc.NewPage();
                         doc.Close();
+            }
+            MessageBox.Show("Отчет сформирован");
         }
-        static public void sellsPdf()
+        static public void sellsPdf(int ID)
         {
             int month = 5;
 
-            DataTable dt = ConnectionClass.getResult("select Name, Surname,Patronymic, Address,Type,Material ,Orders.Price ,Data,Image" +
-                " from Client,Products,Orders where cast(substr(Data,4,2) as integer) = " + month + " and Client.ID=Orders.ClientID and Orders.ProductID = Products.ID and Orders.Status = 'Sold';");
-            
-            var doc = new Document();
-            PdfWriter.GetInstance(doc, new FileStream(@"D:\Sells.pdf",
+            DataTable dt = ConnectionClass.getResult("select Name, Surname,Patronymic, Address,Type,Material ,Orders.Price ,Data,Image,Orders.ID" +
+                " from Client,Products,Orders  where Client.ID=Orders.ClientID and Orders.ProductID = Products.ID and Orders.Status = 'Sold' and Orders.ID="+ID);
+                  
+            for (int i=0;i<dt.Rows.Count;i++)
+            {
+                var doc = new Document();
+            PdfWriter.GetInstance(doc, new FileStream(@"D:\Reports\Продажи\ДоговорПродажи_№"+dt.Rows[0][9].ToString()+".pdf",
             FileMode.Create)); doc.Open();
             BaseFont baseFont = BaseFont.CreateFont(@"..\..\Tahoma.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
 
@@ -652,10 +674,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
             a1.Alignment = Element.ALIGN_CENTER;
             a1.Add(Environment.NewLine);
             doc.Add(a1);
-
-            for (int i=0;i<dt.Rows.Count;i++)
-            {
-                 phrase = new Phrase("Договор продажи мебели", new
+                 phrase = new Phrase("Договор продажи мебели №" + dt.Rows[0][9].ToString(), new
       iTextSharp.text.Font(baseFont, 18,
       iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0, 0, 0))));
                  a1 = new Paragraph(phrase);
@@ -716,7 +735,7 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
                 {
                     using (MemoryStream stream = new MemoryStream())
                     {
-                        MessageBox.Show(dt.Rows[i][8].ToString().Length + "");
+                        //MessageBox.Show(dt.Rows[i][8].ToString().Length + "");
                         System.Drawing.Image image = getImage(dt.Rows[i][8].ToString());
                         
 
@@ -730,9 +749,10 @@ iTextSharp.text.Font.NORMAL, new BaseColor(Color.FromArgb(0,0,0))));
                 //catch (Exception e) {  }
 
 
-                doc.NewPage();
-            }
+               // doc.NewPage();
             doc.Close();
+            }
+            MessageBox.Show("Отчет сформирован");
         }
 
         static System.Drawing.Image getImage(string bitmapString)

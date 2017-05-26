@@ -48,7 +48,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 40);
             this.button1.TabIndex = 0;
-            this.button1.Text = "ChooseFile";
+            this.button1.Text = "Выбрать файл";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -62,9 +62,9 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(46, 21);
+            this.textBox1.Location = new System.Drawing.Point(55, 21);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(221, 20);
+            this.textBox1.Size = new System.Drawing.Size(212, 20);
             this.textBox1.TabIndex = 2;
             // 
             // label2
@@ -72,9 +72,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Mail:";
+            this.label2.Text = "Почта";
             // 
             // textBox2
             // 
@@ -90,7 +90,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(182, 62);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Send";
+            this.button2.Text = "Отправить";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -99,9 +99,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(16, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Text";
+            this.label3.Text = "Текст";
             // 
             // SendToEmail
             // 
@@ -116,7 +116,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "SendToEmail";
-            this.Text = "te";
+            this.Text = "Отпрваить на почту";
             this.ResumeLayout(false);
             this.PerformLayout();
 

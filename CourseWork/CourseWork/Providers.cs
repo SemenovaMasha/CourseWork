@@ -107,7 +107,7 @@ namespace CourseWork
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Reports.paymentsPdf();
+            Reports.paymentsPdf(Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value.ToString()));
         }
     }
 }

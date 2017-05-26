@@ -19,8 +19,6 @@ namespace CourseWork
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            
             DataTable dt = ConnectionClass.getResult(@"SELECT * FROM Material where Name = '" + textBox1.Text + "'; ");
                 if (dt.Rows.Count == 1)
                 {
@@ -33,11 +31,8 @@ namespace CourseWork
                 {
                 ConnectionClass.executeQuery
                     (@"INSERT INTO Material(Name,Volume)  VALUES('" + textBox1.Text + @"'," + textBox2.Text + @");");
-                
-
                 }
             
-
             Close();
         }
     }

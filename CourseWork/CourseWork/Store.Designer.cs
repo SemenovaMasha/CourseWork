@@ -89,7 +89,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 53);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Add Material";
+            this.button1.Text = "Добавить материал";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -102,7 +102,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Store";
-            this.Text = "Store";
+            this.Text = "Склад";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
